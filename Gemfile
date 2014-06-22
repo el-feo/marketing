@@ -23,6 +23,8 @@ gem 'sitemap_generator', '~> 5.0.2'
 gem 'favicon_maker', '~> 1.3'
 gem 'kaminari', '~> 0.16.0'
 
+gem 'mandrill-api', '~> 1.0.51'
+
 group :development do
   gem 'foreman', require: false
   gem 'spring', '~> 1.1.2'

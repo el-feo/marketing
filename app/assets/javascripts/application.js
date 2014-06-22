@@ -25,4 +25,6 @@
 //= require bootstrap/scrollspy
 //= require bootstrap/tab
 //= require bootstrap/transition
+//= require datatables/jquery.dataTables
+//= require datatables/dataTables.bootstrap
 //= require_tree .

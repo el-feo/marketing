@@ -11,9 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140618214012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "leads", force: true do |t|
+    t.string   "phase"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company_name"
+    t.string   "title"
+    t.string   "email"
+    t.string   "domain"
+    t.string   "city"
+    t.string   "category_1"
+    t.string   "category_2"
+    t.string   "category_3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leads", ["city"], name: "index_leads_on_city", using: :btree
+  add_index "leads", ["company_name"], name: "index_leads_on_company_name", using: :btree
+  add_index "leads", ["email"], name: "index_leads_on_email", unique: true, using: :btree
+  add_index "leads", ["phase"], name: "index_leads_on_phase", using: :btree
+  add_index "leads", ["title"], name: "index_leads_on_title", using: :btree
 
 end
