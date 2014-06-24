@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618214012) do
+ActiveRecord::Schema.define(version: 20140624173805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20140618214012) do
     t.string   "category_3"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "campaign"
+    t.date     "campaign_date"
   end
 
   add_index "leads", ["city"], name: "index_leads_on_city", using: :btree

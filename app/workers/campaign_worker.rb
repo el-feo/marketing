@@ -13,14 +13,13 @@ class CampaignWorker
 
   def email_lead
     template_name = "Beta Announcement"
-    template_content = [{"name"=>"example name", "content"=>"example content"}]
     message = {
      :subject=> "Production's About to Change",
      :from_name=> "Jeb Coleman",
      :from_email=> "jeb@productionsense.com",
      :to=>[{:email=> @user.email}]
     }
-    sending = @m.send_template template_name, template_content, message
+    sending = @m.messages.send_template template_name,, message
     puts sending
   end
 end
