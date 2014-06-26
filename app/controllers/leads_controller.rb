@@ -13,8 +13,9 @@ class LeadsController < ApplicationController
 
   def email
     leads_array = Lead.where(phase: params[:phase])
+    campaign = params[:campaign]
     leads_array = leads_array.pluck(:id)
-    CampaignWorker.perform_async(leads_array)
+    CampaignWorker.perform_async(leads_array, campaign)
     redirect_to leads_path, notice: "Leads scheduled for email."
   end
 
